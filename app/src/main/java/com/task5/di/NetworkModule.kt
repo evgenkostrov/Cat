@@ -1,6 +1,5 @@
 package com.task5.di
 
-import com.example.utils.BuildConfig
 import com.task5.constants.AppConstants
 import com.task5.datasource.NetworkDataSource
 import com.task5.network.CatRetrofit
@@ -9,6 +8,7 @@ import com.task5.datasource.NetworkDataSourceImpl
 import com.task5.network.CatRetrofitServiceImpl
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.task5.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

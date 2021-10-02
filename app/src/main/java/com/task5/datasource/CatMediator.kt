@@ -1,5 +1,6 @@
 package com.task5.datasource
 
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
@@ -15,6 +16,7 @@ import java.io.InvalidObjectException
 
 
 
+@ExperimentalPagingApi
 class CatMediator (private val networkDataSource: NetworkDataSource,
                    private val  database: CatDatabase
 ) :RemoteMediator<Int, CatsResponse>() {

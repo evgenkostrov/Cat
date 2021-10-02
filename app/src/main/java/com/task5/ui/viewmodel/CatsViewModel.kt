@@ -15,11 +15,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CatsViewModel
+@ExperimentalPagingApi
 @Inject
 constructor( private val repository: CatDbRepository
 ): ViewModel() {
 
 
+    @ExperimentalPagingApi
     fun fetchCatData(): Flow<PagingData<CatsResponse>> {
         return repository.getCats().cachedIn(viewModelScope)
     }

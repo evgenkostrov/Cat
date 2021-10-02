@@ -3,9 +3,6 @@ package com.task5.di
 import android.content.Context
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import com.example.utils.GlideApp
-import com.example.utils.GlideRequest
-import com.example.utils.GlideRequests
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

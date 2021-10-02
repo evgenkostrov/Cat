@@ -13,7 +13,6 @@ import com.task5.ui.viewmodel.CatsViewModel
 import com.task5.ui.adapter.CatListAdapter
 import com.task5.ui.adapter.CatLoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
@@ -22,10 +21,11 @@ import androidx.core.app.ActivityOptionsCompat
 import com.task5.constants.IntentConstants
 
 import android.view.animation.AnimationUtils
-import com.example.utils.GlideApp
+import androidx.paging.ExperimentalPagingApi
 import com.task5.R
+import com.task5.utils.GlideApp
 
-
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class CatFragment : Fragment(R.layout.fragment_cat) , CatListAdapter.OnCellClickListener{
 
@@ -35,14 +35,16 @@ class CatFragment : Fragment(R.layout.fragment_cat) , CatListAdapter.OnCellClick
     lateinit var loaderStateAdapter: CatLoadStateAdapter
 
 
+    @ExperimentalPagingApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecylerView()
+        initRecyclerView()
         setUpRecycler(view)
         fetchCatImages()
     }
 
 
+    @ExperimentalPagingApi
     private fun fetchCatImages() {
         lifecycleScope.launch {
             catViewModel.fetchCatData().distinctUntilChanged().collectLatest {
@@ -51,7 +53,7 @@ class CatFragment : Fragment(R.layout.fragment_cat) , CatListAdapter.OnCellClick
         }
     }
 
-    private fun initRecylerView() {
+    private fun initRecyclerView() {
         val glide = GlideApp.with(this)
         adapter = CatListAdapter(glide)
         adapter.setOnClickListener(this)

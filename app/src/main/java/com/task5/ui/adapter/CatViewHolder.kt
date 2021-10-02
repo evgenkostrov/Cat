@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.task5.model.CatsResponse
-import com.example.utils.GlideRequests
 import com.task5.R
+import com.task5.utils.GlideRequests
 
 
 class CatViewHolder(private val view: View, private val glide: GlideRequests)

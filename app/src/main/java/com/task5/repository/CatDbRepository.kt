@@ -1,5 +1,6 @@
 package com.task5.repository
 
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -27,6 +28,7 @@ class CatDbRepository @Inject constructor(
     }
 
 
+    @ExperimentalPagingApi
     override fun getCats(): Flow<PagingData<CatsResponse>> {
         val pagingConfig: PagingConfig = getDefaultPageConfig()
         val pagingSourceFactory = { database.getCatDao().getCatData() }

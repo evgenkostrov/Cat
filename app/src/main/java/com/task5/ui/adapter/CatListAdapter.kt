@@ -8,7 +8,7 @@ import android.view.View
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.task5.model.CatsResponse
-import com.example.utils.GlideRequests
+import com.task5.utils.GlideRequests
 
 
 class CatListAdapter(private val glide: GlideRequests)
