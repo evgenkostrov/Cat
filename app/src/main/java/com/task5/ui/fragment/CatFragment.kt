@@ -69,25 +69,14 @@ class CatFragment : Fragment(R.layout.fragment_cat) , CatListAdapter.OnCellClick
     override fun onCellClicked(image: CatsResponse, view: View) {
         view.animation=AnimationUtils.loadAnimation(requireActivity(), R.anim.fade_inn)
 
-
-
         activity?.let{
             val intent = Intent (it, CatImageActivity::class.java)
             intent.putExtra(IntentConstants.CAT_EXTRA_URL,image.url)
-
 
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 requireActivity(),
                 view, "cat_image"
             )
-//            val options = ActivityOptionsCompat.makeCustomAnimation(
-//                requireActivity(),
-//               R.anim.fade_inn,
-//                0
-//            )
-////                        val options = ActivityOptionsCompat.makeScaleUpAnimation(
-////                view,0,0,100,100
-////            )
 
             it.startActivity(intent,options.toBundle())
         }

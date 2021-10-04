@@ -17,6 +17,6 @@
         android:scaleType="centerCrop"
         android:transitionName="cat_image"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="@string/pinch_zoom" />
+         />
 
 </androidx.cardview.widget.CardView>
